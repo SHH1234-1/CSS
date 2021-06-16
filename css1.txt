@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none; /*링크의 밑줄을 없애주는 태그*/
+        }
+        nav ul {
+            list-style: none;   /*ul로 저장되었으므로 1234가 붙는걸 none으로 제거*/
+        }
+        nav ul li {          
+            display: inline-block;  /*세로형태로 나열되는 li들을 display: inline-block; 형태로 가로로 나열 */
+            margin: 0 2px;        /*margin 세로 0 가로 2px*/
+        }
+        #list{                /*li들을 담을 컨텐츠 박스*/
+            width: 1000px;   /*너비 1000*/
+            margin: 0 auto;  /*세로방향 0 중앙정렬*/
+        }
+        .textGreen {    /*글자에 색깔 넣기*/
+            color: #03c75a;
+            font-weight: bold; /*글자 크기 굵게 하기*/
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <nav id="list">
+            <ul>
+                <li><a href="#"><div class="textGreen">메일</div></a></li> /*a href 링크 참조 class="textGreen" 색깔+글자크기 볼드체*/
+                <li><a href="#"><div class="textGreen">카페</div></a></li>
+                <li><a href="#"><div class="textGreen">블로그</div></a></li>
+                <li><a href="#"><div class="textGreen">지식iN</div></a></li>
+                <li><a href="#"><div class="textGreen">쇼핑</div></a></li>
+                <li><a href="#"><div class="textGreen">쇼핑Live</div></a></li>
+                <li><a href="#"><div class="textGreen">Pay</div></a></li>
+                <li><a href="#"><div class="textGreen">TV</div></a></li>
+                <li><a href="#"><div>사전</div></a></li>
+                <li><a href="#"><div>뉴스</div></a></li>
+                <li><a href="#"><div>증권</div></a></li>
+                <li><a href="#"><div>부동산</div></a></li>
+                <li><a href="#"><div>지도</div></a></li>
+                <li><a href="#"><div>VIBE</div></a></li>
+                <li><a href="#"><div>책</div></a></li>
+                <li><a href="#"><div>웹툰</div></a></li>
+
+            </ul>
+        </nav>
+    </div>
+
+</body>
+</html>
