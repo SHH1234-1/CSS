@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <script src="https://kit.fontawesome.com/c3df4d7d1c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/join_style.css" />
+</head>
+<body>
+    <div id="container">
+        <header id="mainheader">
+            <nav id="join_navbar">
+                <!-- 로고(로고이미지, 홈페이지 이름) -->
+                <!-- 메뉴(자기소개, 게시글) -->
+                <!-- 링크(로그인, 회원가입) -->
+                <a href="/myHome/index.html" id="mainlogo"><i id="logo" class="fab fa-adn"></i> son blog</a>
+            </nav>
+        </header>
+        <main>
+            <form action="#" method="get">
+                <div id="join_content">
+                    <div class="join_items">
+                        <label class="join_label">아이디</label>
+                        <span class="join_input">
+                            <input type="text" id="test" class="join_text">
+                            <span class="join_input_text">@naver.com</span>
+                        </span>
+                        <div class="join_warning">
+                            <p class="warning_text">필수 정보입니다.</p>
+                        </div>
+                    </div>
+                    <div class="join_items">
+                        <label class="join_label">비밀번호</label>
+                        <span class="join_input">
+                            <input type="password" class="join_text">
+                            <span class="join_input_text"></span>
+                        </span>
+                        <div class="join_warning">
+                            <p class="warning_text">필수 정보입니다.</p>
+                        </div>
+                    </div>
+                    <div class="join_items">
+                        <label class="join_label">비밀번호 재확인</label>
+                        <span class="join_input">
+                            <input type="password" class="join_text">
+                            <span class="join_input_text"></span>
+                        </span>
+                        <div class="join_warning">
+                            <p class="warning_text">필수 정보입니다.</p>
+                        </div>
+                    </div>
+                    <div class="join_items">
+                        <label class="join_label">이름</label>
+                        <span class="join_input">
+                            <input type="text" class="join_text">
+                            <span class="join_input_text"></span>
+                        </span>
+                        <div class="join_warning">
+                            <p class="warning_text">필수 정보입니다.</p>
+                        </div>
+                    </div>
+                    <div class="join_items">
+                        <label class="join_label">생년월일</label>
+                        <div class="bir_warp">
+                            <div class="bir_yy">
+                                <span class="ps_box">
+                                    <input type="text" class="join_text">
+                                </span>
+                            </div>
+                            <div class="bir_mm">
+                                <span class="ps_box">
+                                    <select class="bir_select">
+                                        <option value="0">월</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="bir_dd">
+                                <span class="ps_box">
+                                    <input type="text" class="join_text">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="join_warning">
+                            <p class="warning_text">필수 정보입니다.</p>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="join_button">
+                        <span class="button_text">가입하기</span>
+                    </button>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <div id="foot">
+                <!-- 이름, 연락처, 주소, 이메일 -->
+                <ul>
+                    <li>이름: 손효현</li>
+                    <li>연락처: 010-1234-5678</li>
+                    <li>주소: 부산 동래구 명륜로</li>
+                    <li>이메일: dfsdfsd11@kakao.com</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+const join_text = document.querySelectorAll(".join_text"); /*join_text는 input영역을 말하므로 여기서 input영역은 개이므로 querySelectorAll로 지정하여 넣어줌*/
+const join_warning = document.querySelectorAll(".join_warning"); /*마찬가지로 필수 정보입니다라는 메시지는 4번 나오므로 querySelectorAll로 지정 */
+
+for(let i = 0; i < join_text.length - 1; i++){ /*input type="text"는 5번 필수정보입니다 메시지는 4번이므로 input type="text"의 정보를 가진 인스턴스 join_text에서 1를 빼줌 */
+    join_text[i].onblur = () => {   /*join_text에서 onblur의 이벤트가 발생할 경우*/
+        if(join_text[i].value.length == 0){  /*이벤트가 발생했을 때 join_text가 아무런 값이 없다면  */
+            join_warning[i].style.display = "block"; /* 마찬가지로 필수  정보입니다 라는 메시지를 표시*/
+        }else { 
+            join_warning[i].style.display = "none"; /* 값이 있는 경우에는 표시하지 않음*/
+        }
+    }
+}
+
